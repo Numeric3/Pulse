@@ -1,0 +1,11 @@
+/out/
+/tests/out/
+/tmp_*
+/dist/
+/probe_*.au3
+/tests/probe_*.au3
+/tests/ping.au3
+*.cfb
+*.log
+*.out
+/Web/gate_note.txt

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Pulse</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header id="bar">
+		<div class="brand">
+			<span class="dot" id="live"></span>
+			<b>Pulse</b>
+			<span class="sub">flight recorder for AutoIt</span>
+		</div>
+		<div class="stat"><label>events</label><span id="s-total">0</span></div>
+		<div class="stat"><label>per sec</label><span id="s-rate">0.0</span></div>
+		<div class="stat"><label>sources</label><span id="s-src">0</span></div>
+		<div class="stat"><label>branches</label><span id="s-tree">0</span></div>
+		<div class="stat"><label>dead</label><span id="s-dead">0</span></div>
+		<div class="stat"><label>archive</label><span id="s-cfb">idle</span></div>
+		<div class="grow"></div>
+		<input id="filter" type="search" placeholder="filter: name, source, text" autocomplete="off">
+		<span class="chips" id="chips"></span>
+	</header>
+
+	<main>
+		<section id="stream">
+			<h2>Live stream <span class="hint" id="stream-count"></span></h2>
+			<div id="rows"></div>
+		</section>
+
+		<aside id="side">
+			<section>
+				<h2>Event tree <span class="hint">dotted names, rolling counts</span></h2>
+				<div id="tree"></div>
+			</section>
+			<section>
+				<h2>Sources</h2>
+				<table id="src">
+					<thead>
+						<tr>
+							<th>name</th>
+							<th>pid</th>
+							<th class="r">events</th>
+							<th class="r">err</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</section>
+			<section>
+				<h2>Archive</h2>
+				<div id="arch"></div>
+			</section>
+		</aside>
+	</main>
+
+	<footer>
+		<span id="lasterr"></span>
+		<span class="grow"></span>
+		<span class="hint" id="endpoint">ws://127.0.0.1:48411/stream &#183; one flat JSON object per text frame</span>
+	</footer>
+
+	<script src="app.js"></script>
+</body>
+
+</html>
